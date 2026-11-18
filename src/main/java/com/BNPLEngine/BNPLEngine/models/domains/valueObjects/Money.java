@@ -26,4 +26,12 @@ public record Money(BigDecimal amount) {
 
         return new Money(amount.subtract(value));
     }
+
+    public static Money zeroOf() {
+        return new Money(BigDecimal.ZERO);
+    }
+
+    public Boolean isZero() {
+        return this.amount.compareTo(BigDecimal.ZERO) == 0;
+    }
 }
